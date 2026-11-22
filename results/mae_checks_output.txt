@@ -1,0 +1,4 @@
+MAE parameters: 3173248
+OK: every image has exactly 48 of 64 patches masked (16 visible)
+OK: loss = 0.4375 uses masked patches only (visible patches do not affect it)
+OK: shapes (pred, mask, features) = (32, 64, 192) (32, 64) (32, 192)
