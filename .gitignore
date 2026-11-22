@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pt
+*.pth
+*.npy
+*.safetensors
+starter/data/
+weights/
+.ipynb_checkpoints/
+smoke_*
