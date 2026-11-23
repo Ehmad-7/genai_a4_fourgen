@@ -40,3 +40,8 @@ p = torch.sigmoid(logits.double())
 manual = -(x.double() * torch.log(p) + (1 - x.double()) * torch.log(1 - p)).sum(dim=(1, 2, 3))
 assert torch.allclose(recon.double(), manual, rtol=1e-4, atol=1e-3)
 print("OK: reconstruction term = binary cross-entropy summed over 784 pixels; shapes (28x28 logits, 16-d mu/log-var)")
+
+# 5) near the prior the KL is tiny but still never negative
+near = kl_divergence(torch.randn(10000, 16) * 0.01, torch.randn(10000, 16) * 0.01)
+assert (near >= 0).all()
+print(f"OK: KL >= 0 also for posteriors very close to the prior (max {near.max().item():.5f})")

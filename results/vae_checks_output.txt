@@ -3,3 +3,4 @@ OK: KL >= 0 for 10000 random posteriors (min 22.3896, max 3415.7)
 OK: KL = 0 when mu = 0 and log sigma^2 = 0 -> [-0.0, -0.0, -0.0, -0.0, -0.0]
 OK: closed-form KL matches torch.distributions.kl_divergence
 OK: reconstruction term = binary cross-entropy summed over 784 pixels; shapes (28x28 logits, 16-d mu/log-var)
+OK: KL >= 0 also for posteriors very close to the prior (max 0.00277)
