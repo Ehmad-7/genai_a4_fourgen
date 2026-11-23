@@ -1,0 +1,8 @@
+{
+  "params": 3173248,
+  "final_loss": 0.0055706787176062296,
+  "seconds": 419.7315549850464,
+  "device": "Tesla T4",
+  "epochs": 100,
+  "train_images": 16200
+}

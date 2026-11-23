@@ -1,0 +1,30 @@
+labelled images: 160 | per class: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+pretrained encoder:
+  epoch  50  train loss 1.5578
+  epoch 100  train loss 1.3440
+  epoch 150  train loss 1.2310
+  epoch 200  train loss 1.1566
+TEST ACCURACY (pretrained MAE encoder): 54.24%   (train acc 63.1%, chance 10%)
+random-init encoder:
+  epoch  50  train loss 1.9144
+  epoch 100  train loss 1.7565
+  epoch 150  train loss 1.6637
+  epoch 200  train loss 1.5989
+TEST ACCURACY (random encoder): 43.43%
+  AnnualCrop              35.6%
+  Forest                  76.6%
+  HerbaceousVegetation    49.6%
+  Highway                 29.0%
+  Industrial              83.2%
+  Pasture                 65.2%
+  PermanentCrop           53.5%
+  Residential             52.7%
+  River                   43.7%
+  SeaLake                 55.3%
+most common confusions (count, true -> predicted):
+   164  AnnualCrop -> PermanentCrop
+   154  SeaLake -> Pasture
+   112  River -> Highway
+   112  PermanentCrop -> HerbaceousVegetation
+   102  Residential -> HerbaceousVegetation
+saved confusion matrix, classifier head and json

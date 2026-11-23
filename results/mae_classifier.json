@@ -1,0 +1,17 @@
+{
+  "test_accuracy": 0.5424073934555054,
+  "train_accuracy_160": 0.6312500238418579,
+  "random_encoder_test_accuracy": 0.4342592656612396,
+  "per_class_accuracy": {
+    "AnnualCrop": 0.35570469798657717,
+    "Forest": 0.7664473684210527,
+    "HerbaceousVegetation": 0.4956369982547993,
+    "Highway": 0.2903225806451613,
+    "Industrial": 0.8323353293413174,
+    "Pasture": 0.6515151515151515,
+    "PermanentCrop": 0.5353159851301115,
+    "Residential": 0.5270758122743683,
+    "River": 0.43667296786389415,
+    "SeaLake": 0.5533661740558292
+  }
+}
