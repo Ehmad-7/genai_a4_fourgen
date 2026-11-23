@@ -1,0 +1,7 @@
+{
+  "params": 4028353,
+  "final_loss": 0.02283179380506723,
+  "seconds": 2157.709781885147,
+  "device": "Tesla T4",
+  "epochs": 40
+}

@@ -1,0 +1,4 @@
+member 1 correct: 40/40 (100.0%)   chance level = 2.5%
+member 2 and 'both agreed': N/A (solo submission)
+wrong guesses:
+saved results/human_eval.csv
