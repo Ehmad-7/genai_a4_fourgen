@@ -1,0 +1,8 @@
+OK: T = 1000, beta from 1e-04 to 0.02 (linear)
+alpha_bar at t=0: 0.9999, t=999 (alpha_bar_T): 4.036e-05
+OK: alpha_bar_T is about 4e-5, so x_T is almost pure noise
+x_999: mean -0.006, std 1.000, corr with clean image 0.0047
+OK: x_999 has unit variance and is uncorrelated with the clean image (looks like noise)
+saved results/figures/ddpm_forward_noising.png
+U-Net parameters: 4028353
+OK: U-Net(x_t, t, class_labels=y) -> (4, 1, 28, 28)
