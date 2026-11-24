@@ -1,0 +1,6 @@
+OK: 40181 abstracts -> 79332 chunks; max words in a chunk = 150, mean 121.3
+OK: consecutive chunks share exactly 30 words (31119 abstracts have more than one chunk)
+OK: perfect retriever -> {'Hit@1': 1.0, 'Hit@5': 1.0, 'Hit@10': 1.0, 'Recall@1': 1.0, 'Recall@5': 1.0, 'Recall@10': 1.0, 'MRR@10': 1.0}
+(index not built yet: skipped the embedding-norm check, rerun after part_d_rag/index.py)
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2887.36it/s]
+OK: embedding of a text is the same alone and padded in a batch (max diff 7.8e-08); norm 1.000000
