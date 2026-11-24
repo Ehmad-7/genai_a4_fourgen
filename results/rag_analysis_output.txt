@@ -1,0 +1,42 @@
+100 answers
+
+idk  x  does the top-5 context contain a relevant abstract?
+  context has relevant = True  | answered    : 81
+  context has relevant = True  | I-dont-know : 1
+  context has relevant = False | answered    : 11
+  context has relevant = False | I-dont-know : 7
+
+answers without any [n] citation: 39 (of which flagged I-dont-know: 7)
+retrieval failures (no relevant abstract in top 10) among these 100 questions: 14; model said I-dont-know on 7 of them, answered the other 7
+
+answers flagged as I-dont-know (check these by eye: is the flag right?):
+  qid 4456: "I don't know based on the provided passages."
+  qid 1116: 'The passage does not provide specific information about which gene causes Neurofibromatosis type I and which chromosome it is located on. Th'
+  qid 3829: 'Based on the provided passages, there is no direct mention of the role of genotoxic pks + E. coli in cancer. Therefore, my response is:\n\nI d'
+  qid 2630: "No, there is no mention of interleukin-11 in the given passages regarding cardiovascular fibrosis. Therefore, the correct answer is:\n\nI don'"
+  qid 3886: "I don't know based on the provided passages."
+  qid 181: "I don't know based on the provided passages."
+  qid 1630: 'The passages do not provide specific information about which extra thyroid tissues have thyrotropin (TSH) receptors. Therefore, my response '
+  qid 2948: 'One CCR4 targeted drug is mentioned in Passage [2], where it states that CCR4 recognizes RNA substrates involving several features of the RN'
+
+FIRST THREE RETRIEVAL FAILURES (analysis question 6):
+
+- Q: Is capmatinib effective for glioblastoma?
+  reference: No. Combination of capmatinib buparlisib resulted in no clear activity in patients with recurrent PTEN-deficient glioblastoma.
+  model answer: Yes, capmatinib is effective for glioblastoma. [3]
+  I-dont-know: False | cited passages: [3] | relevant abstracts: [31776899]
+  retrieved abstract ids: [18366283, 18035958, 32557339, 22413865, 23363814]
+
+- Q: What is F105-P?
+  reference: F105-P is a protamine-antibody fusion protein designed to deliver siRNA to HIV-infected or envelope-transfected cells. In specific, it was designed with the protamine coding sequence linked to the C terminus of the heavy chain Fab fragment of an HIV-1 envelope antibody.
+  model answer: I don't know based on the provided passages.
+  I-dont-know: True | cited passages: [] | relevant abstracts: [15908939]
+  retrieved abstract ids: [26058333, 24214964, 30258093, 23943237, 29059618]
+
+- Q: Which main viral protein is targeted by the drug remdesivir?
+  reference: Viral Susceptibility to the Antiviral Remdesivir (GS-5734) Is Mediated by the Viral Polymerase and the Proofreading Exoribonuclease.
+  model answer: Remdesivir targets MRP4, OATP1B1/1B3, MATE1, and OCT1 [1].
+  I-dont-know: False | cited passages: [1] | relevant abstracts: [30275474, 29511076]
+  retrieved abstract ids: [34497279, 33555378, 34535038, 23102969, 25595799]
+
+wrote results/samples.md with 5 questions

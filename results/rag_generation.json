@@ -1,0 +1,11 @@
+{
+  "n_questions": 100,
+  "rougeL_f": 0.2665984058872661,
+  "rougeL_f_excluding_idk": 0.28242047852066043,
+  "citation_precision": 0.5949367088607594,
+  "n_citations": 79,
+  "n_correct_citations": 47,
+  "answers_without_citation": 39,
+  "idk_rate": 0.08,
+  "context_has_relevant_chunk": 0.82
+}
