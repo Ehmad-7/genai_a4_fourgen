@@ -10,7 +10,7 @@ id,true_class,member1_guess,member1_correct,member2_guess,member2_correct,both_a
 9,khaa,khaa,1,NA,NA,NA
 10,alif mad aa,alif mad aa,1,NA,NA,NA
 11,gaaf,gaaf,1,NA,NA,NA
-12,noonghunna,noonghunna,1,NA,NA,NA
+12,noonghunna,noon,0,NA,NA,NA
 13,meem,meem,1,NA,NA,NA
 14,rhraa,rhraa,1,NA,NA,NA
 15,seey,seey,1,NA,NA,NA
@@ -19,11 +19,11 @@ id,true_class,member1_guess,member1_correct,member2_guess,member2_correct,both_a
 18,zwaa,zwaa,1,NA,NA,NA
 19,kaaf,kaaf,1,NA,NA,NA
 20,alif,alif,1,NA,NA,NA
-21,noon,noon,1,NA,NA,NA
+21,noon,noonghunna,0,NA,NA,NA
 22,zaaa,zaaa,1,NA,NA,NA
 23,faa,faa,1,NA,NA,NA
 24,choti yaa,choti yaa,1,NA,NA,NA
-25,ttaa,ttaa,1,NA,NA,NA
+25,ttaa,daal,0,NA,NA,NA
 26,raa,raa,1,NA,NA,NA
 27,laam,laam,1,NA,NA,NA
 28,zaal,zaal,1,NA,NA,NA
@@ -31,11 +31,11 @@ id,true_class,member1_guess,member1_correct,member2_guess,member2_correct,both_a
 30,jeem,jeem,1,NA,NA,NA
 31,haa2,haa2,1,NA,NA,NA
 32,haa1,haa1,1,NA,NA,NA
-33,daal,daal,1,NA,NA,NA
+33,daal,sheen,0,NA,NA,NA
 34,zwaad,zwaad,1,NA,NA,NA
 35,cheey,cheey,1,NA,NA,NA
 36,haa3,haa3,1,NA,NA,NA
-37,sheen,sheen,1,NA,NA,NA
+37,sheen,ttaa,0,NA,NA,NA
 38,twa,twa,1,NA,NA,NA
 39,hamza,hamza,1,NA,NA,NA
 40,taa,taa,1,NA,NA,NA
