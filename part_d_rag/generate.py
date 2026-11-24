@@ -46,10 +46,11 @@ class Generator:
         self.torch = torch
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.tok = AutoTokenizer.from_pretrained(GEN_MODEL)
+        dt = torch.float16 if self.device == "cuda" else torch.float32     # fp16 is not usable on a CPU
         try:
-            model = AutoModelForCausalLM.from_pretrained(GEN_MODEL, dtype=torch.float16)
+            model = AutoModelForCausalLM.from_pretrained(GEN_MODEL, dtype=dt)
         except TypeError:                                   # older transformers
-            model = AutoModelForCausalLM.from_pretrained(GEN_MODEL, torch_dtype=torch.float16)
+            model = AutoModelForCausalLM.from_pretrained(GEN_MODEL, torch_dtype=dt)
         self.model = model.to(self.device).eval()
 
     def generate(self, messages, max_new_tokens=256):

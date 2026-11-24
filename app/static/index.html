@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GenAI A4: four generative models</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Four generative models, one app</h1>
+    <p class="sub">MAE &middot; VAE &middot; Diffusion &middot; RAG &mdash; all trained or built for this assignment</p>
+  </header>
+  <nav>
+    <button class="tab active" data-tab="mae">MAE</button>
+    <button class="tab" data-tab="vae">VAE</button>
+    <button class="tab" data-tab="diffusion">Diffusion</button>
+    <button class="tab" data-tab="rag">RAG</button>
+  </nav>
+  <div id="error" class="error" hidden></div>
+
+  <!-- ===== MAE ===== -->
+  <section id="mae" class="panel active">
+    <p>Pick a satellite tile from the test set. 75% of its 8&times;8 patches are hidden; the MAE reconstructs them,
+       and a linear classifier on the frozen encoder (trained on only 160 labelled images) predicts the land cover.</p>
+    <div class="row"><button id="mae-shuffle">Shuffle tiles</button><button id="mae-newmask" disabled>New random mask</button></div>
+    <div id="mae-tiles" class="grid tiles"></div>
+    <div id="mae-result" class="result" hidden>
+      <div class="triple">
+        <figure><img id="mae-masked"><figcaption>masked input</figcaption></figure>
+        <figure><img id="mae-recon"><figcaption>reconstruction</figcaption></figure>
+        <figure><img id="mae-orig"><figcaption>original</figcaption></figure>
+      </div>
+      <p id="mae-pred" class="big"></p>
+      <div id="mae-top3"></div>
+    </div>
+  </section>
+
+  <!-- ===== VAE ===== -->
+  <section id="vae" class="panel">
+    <h2>New random characters</h2>
+    <p>Samples z ~ N(0, I) decoded by the VAE (16-dimensional latent space).</p>
+    <div class="row"><button id="vae-random">New random characters</button></div>
+    <div id="vae-grid" class="grid chars"></div>
+    <h2>Interpolate between two characters</h2>
+    <p>Choose two characters; the slider moves along the straight line between their latent means.</p>
+    <div class="row">
+      <label>from <select id="vae-a"></select></label>
+      <label>to <select id="vae-b"></select></label>
+      <button id="vae-pair">Pick two examples</button>
+    </div>
+    <div id="vae-interp" class="triple" hidden>
+      <figure><img id="vae-img-a"><figcaption>start (test image)</figcaption></figure>
+      <figure><img id="vae-frame"><figcaption id="vae-cap">t = 0.00</figcaption></figure>
+      <figure><img id="vae-img-b"><figcaption>end (test image)</figcaption></figure>
+    </div>
+    <input id="vae-slider" type="range" min="0" max="20" value="0" hidden>
+  </section>
+
+  <!-- ===== Diffusion ===== -->
+  <section id="diffusion" class="panel">
+    <p>Pick a character; the class-conditional DDPM generates 8 new samples from pure noise with 1000 denoising
+       steps. <strong>This can take a minute or more on a CPU.</strong></p>
+    <div class="row">
+      <label>character <select id="diff-char"></select></label>
+      <button id="diff-go">Generate 8 samples</button>
+      <span id="diff-status" class="status"></span>
+    </div>
+    <div id="diff-grid" class="grid chars"></div>
+  </section>
+
+  <!-- ===== RAG ===== -->
+  <section id="rag" class="panel">
+    <div class="notice" id="rag-notice">Research prototype, not medical advice. Answers come from a small language model reading
+      a few PubMed abstracts and can be wrong. Do not use them for diagnosis or treatment decisions.</div>
+    <textarea id="rag-q" rows="3" maxlength="500" placeholder="Ask a biomedical research question, e.g. Which gene is mutated in neurofibromatosis type 1?"></textarea>
+    <div class="row"><button id="rag-go">Ask</button><span id="rag-status" class="status"></span></div>
+    <div id="rag-out" hidden>
+      <h3>Answer <span id="rag-idk" class="tag" hidden>model says it does not know</span></h3>
+      <p id="rag-answer" class="answer"></p>
+      <h3>Cited passages</h3>
+      <div id="rag-cited"></div>
+      <details><summary>Other retrieved passages (not cited)</summary><div id="rag-other"></div></details>
+    </div>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
